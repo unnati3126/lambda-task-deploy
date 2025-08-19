@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Test Lambda function deployment
+
+Resources:
+  MyLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: sampletestfunction
+      Handler: lambda.handler
+      Runtime: nodejs18.x
+      MCodeUri: ./
+      MemorySize: 512
+      Timeout: 15
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
