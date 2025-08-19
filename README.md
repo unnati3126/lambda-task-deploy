@@ -1,4 +1,4 @@
-**Node.js project to AWS Lambda**
+**Express.js project to AWS Lambda**
 
 This project demonstrates how to deploy a large-scale Node.js application to AWS Lambda by separating business logic from dependencies.
 
